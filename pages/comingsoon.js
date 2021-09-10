@@ -6,6 +6,7 @@ import {
 import { Col, Row } from "antd";
 import { Card, Heading, Link, Pane, Text } from "evergreen-ui";
 import Head from "next/head";
+import Script from "next/script";
 
 export default function ComingSoon() {
   const checkMandatory5022173000000344923 = () => {
@@ -72,10 +73,10 @@ export default function ComingSoon() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta HTTP-EQUIV="content-type" CONTENT="text/html;charset=UTF-8" />
         <link rel="icon" href="/ico.png" type="image/x-icon" />
-        <script
+        <Script
           id="wf_anal"
           src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=e8f611d0c54ab379829ef1161e8a6715bba995cbef1d2e72046b4b1f8de09039gid1d8319e80246eb3787774377fba9d76657092a3a01ce58655806d56b06646df8gid0553f79ba9ccf83e1be97f6851b4205dc78530f131c55496a36cdc928fa214e9gid14f4ec16431e0686150daa43f3210513"
-        ></script>
+        ></Script>
         {/* <!-- Do not remove this --- Analytics Tracking code ends. --> */}
       </Head>
       <Row
