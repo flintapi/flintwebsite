@@ -10,6 +10,7 @@ import {
   Text,
 } from "evergreen-ui";
 import Head from "next/head";
+import Image from "next/image";
 import { withLayout } from "../components/layout";
 
 const { Panel } = Collapse;

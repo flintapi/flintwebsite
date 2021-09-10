@@ -1,11 +1,12 @@
 import {
   LinkedinFilled,
   MediumSquareFilled,
-  TwitterSquareFilled,
+  TwitterSquareFilled
 } from "@ant-design/icons";
 import { Col, Row } from "antd";
 import { Card, Heading, Link, Pane, Text } from "evergreen-ui";
 import Head from "next/head";
+import Image from "next/image";
 import Script from "next/script";
 
 export default function ComingSoon() {
