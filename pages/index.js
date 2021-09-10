@@ -16,9 +16,6 @@ const { Panel } = Collapse;
 
 function Home({ size }) {
   return (
-    // <div className={styles.container}>
-
-    // </div>
     <>
       <Head>
         <title>FlintApi</title>
@@ -202,7 +199,7 @@ function Home({ size }) {
           <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             <Pane flex={1} background="tint2" height={500}>
               <pre class="line-numbers">
-                <code class="language-js">getAll();</code>
+                {/* <code class="language-js">getAll();</code> */}
               </pre>
             </Pane>
           </Col>

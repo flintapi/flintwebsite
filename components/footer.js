@@ -41,11 +41,17 @@ export default function Footer() {
               paddingLeft={30}
               marginBottom={10}
               flexDirection="row"
-              justifyContent="space-evenly"
+              justifyContent="start"
             >
-              <LinkedinFilled />
-              <TwitterSquareFilled />
-              <MediumSquareFilled />
+              <Link href="https://www.linkedin.com/company/flint-api/">
+                <LinkedinFilled style={{ marginRight: 20 }} />
+              </Link>
+              <Link href="https://twitter.com/flintApi">
+                <TwitterSquareFilled style={{ marginRight: 20 }} />
+              </Link>
+              <Link href="https://medium.com/@flintApi">
+                <MediumSquareFilled style={{ marginRight: 20 }} />
+              </Link>
             </Pane>
             <Pane display="flex" paddingLeft={30}>
               <TextInput width="100%" marginRight={12} height="100%" />

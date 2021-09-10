@@ -1,3 +1,8 @@
+import {
+  LinkedinFilled,
+  MediumSquareFilled,
+  TwitterSquareFilled,
+} from "@ant-design/icons";
 import { Col, Row } from "antd";
 import { Card, Heading, Link, Pane, Text } from "evergreen-ui";
 import Head from "next/head";
@@ -76,7 +81,8 @@ export default function ComingSoon() {
       <Row
         style={{
           width: "100%",
-          height: "100vh",
+          height: "100%",
+          minHeight: "100vh",
           margin: 0,
           padding: 0,
           backgroundImage: "url('/folk-pattern-black.png')",
@@ -95,7 +101,30 @@ export default function ComingSoon() {
             <Link href="/">
               <img src="/logo-white.png" height={50} />
             </Link>
-            <Pane></Pane>
+            <Pane
+              display="flex"
+              // width="100%"
+              paddingLeft={30}
+              marginBottom={10}
+              flexDirection="row"
+              justifyContent="start"
+            >
+              <Link href="https://www.linkedin.com/company/flint-api/">
+                <LinkedinFilled
+                  style={{ marginRight: 20, fontSize: 30, color: "#0077b5" }}
+                />
+              </Link>
+              <Link href="https://twitter.com/flintApi">
+                <TwitterSquareFilled
+                  style={{ marginRight: 20, fontSize: 30, color: "#1DA1F2" }}
+                />
+              </Link>
+              <Link href="https://medium.com/@flintApi">
+                <MediumSquareFilled
+                  style={{ marginRight: 20, fontSize: 30, color: "white" }}
+                />
+              </Link>
+            </Pane>
           </Pane>
         </Col>
         <Col span={24} style={{ textAlign: "center" }}>
@@ -123,7 +152,10 @@ export default function ComingSoon() {
               action="https://crm.zoho.com/crm/WebForm"
               name="WebForm5022173000000344923"
               method="POST"
-              onSubmit='javascript:document.charset="UTF-8"; return checkMandatory5022173000000344923()'
+              onSubmit={() => {
+                document.charset = "UTF-8";
+                return checkMandatory5022173000000344923();
+              }}
               acceptCharset="UTF-8"
             >
               <input
@@ -164,7 +196,7 @@ export default function ComingSoon() {
                   className="zcwf_col_lab"
                   style={{ fontSize: "12px", fontFamily: "Arial" }}
                 >
-                  <label for="NAME">
+                  <label htmlFor="NAME">
                     Email<span style={{ color: "red" }}>*</span>
                   </label>
                 </div>
@@ -212,8 +244,14 @@ export default function ComingSoon() {
             .
           </Heading>
         </Col>
-        <Col span={24} style={{ padding: "20px 20px", width: "100%" }}>
-          <Row gutter={18} style={{ margin: 0, padding: 0, width: "100%" }}>
+        <Col
+          span={24}
+          style={{ padding: "20px 20px", width: "100%", height: "auto" }}
+        >
+          <Row
+            gutter={[18, 18]}
+            style={{ margin: 0, padding: 0, width: "100%", height: "auto" }}
+          >
             <Col
               xs={{ span: 24 }}
               sm={{ span: 12 }}

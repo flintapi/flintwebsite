@@ -1,5 +1,5 @@
 import { Menu } from "antd";
-import { Button, Link, Pane } from "evergreen-ui";
+import { Button, Link, majorScale, Pane } from "evergreen-ui";
 import { useRouter } from "next/router";
 
 export default function Header() {
@@ -37,13 +37,23 @@ export default function Header() {
           <Menu.Item>DEVELOPER</Menu.Item>
           <Menu.Item>CONTACT</Menu.Item>
           <Menu.Item>
-            <Button>LOGIN</Button>
+            <Button height={majorScale(5)}>LOGIN</Button>
           </Menu.Item>
           <Menu.Item>
-            <Button appearance="primary">SIGN UP</Button>
+            <Button appearance="primary" height={majorScale(5)}>
+              SIGN UP
+            </Button>
           </Menu.Item>
         </Menu>
       </Pane>
+      <style jsx global>{`
+        .ant-menu-item-active {
+          border-color: #ffbd59;
+        }
+        .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover {
+          color: #ffbd59;
+        }
+      `}</style>
     </Pane>
   );
 }
