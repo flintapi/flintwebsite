@@ -32,7 +32,7 @@ export default function Footer() {
             justifyContent="center"
             height="100%"
           >
-            <Image src="/logo-black.png" height={90} />
+            <Image src="/logo-black.png" alt="" height={90} />
             <Heading size={400} paddingLeft={30} marginBottom={10}>
               Social Networks
             </Heading>

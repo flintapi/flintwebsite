@@ -1,7 +1,7 @@
 import {
   LinkedinFilled,
   MediumSquareFilled,
-  TwitterSquareFilled
+  TwitterSquareFilled,
 } from "@ant-design/icons";
 import { Col, Row } from "antd";
 import { Card, Heading, Link, Pane, Text } from "evergreen-ui";
@@ -98,7 +98,7 @@ export default function ComingSoon() {
             justifyContent="space-between"
           >
             <Link href="/">
-              <Image src="/logo-white.png" height={50} />
+              <Image src="/logo-white.png" alt="" height={50} />
             </Link>
             <Pane
               display="flex"
