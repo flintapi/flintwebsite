@@ -1,6 +1,5 @@
 import { Menu } from "antd";
 import { Button, Link, majorScale, Pane } from "evergreen-ui";
-import Image from "next/image";
 import { useRouter } from "next/router";
 
 export default function Header() {
@@ -19,10 +18,12 @@ export default function Header() {
         display="flex"
         height="100%"
         flexDirection="row"
-        justifyContent="space-between"
+        justifyContent="center"
       >
         <Link href="#">
-          <Image src="/logo-black.png" alt="" height={50} />
+          <div className="logo">
+            {/* <Image src="" alt="" width={160} height={40} /> */}
+          </div>
         </Link>
       </Pane>
       <Pane alignItems="center" display="flex" width="100%">
@@ -53,6 +54,16 @@ export default function Header() {
         }
         .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover {
           color: #ffbd59;
+        }
+        .logo {
+          float: left;
+          width: 120px;
+          height: 40px;
+          background-image: url("/logo-black.png");
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          margin: 10px 24px 10px 0;
         }
       `}</style>
     </Pane>

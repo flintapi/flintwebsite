@@ -98,7 +98,7 @@ export default function ComingSoon() {
             justifyContent="space-between"
           >
             <Link href="/">
-              <Image src="/logo-white.png" alt="" height={50} />
+              <Image src="/logo-white.png" alt="" width={160} height={50} />
             </Link>
             <Pane
               display="flex"
