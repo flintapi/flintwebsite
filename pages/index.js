@@ -392,7 +392,7 @@ function Home({ size }) {
           textAlign="center"
         >
           Enable anyone to build on the
-          <br /> blockchain and Mint NFT\'s
+          <br /> blockchain and Mint NFTs
         </Heading>
         <Pane>
           <Button appearance="primary" marginRight={10}>
