@@ -1,5 +1,6 @@
 import { Menu } from "antd";
 import { Button, Link, majorScale, Pane } from "evergreen-ui";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 export default function Header() {
@@ -21,7 +22,7 @@ export default function Header() {
         justifyContent="space-between"
       >
         <Link href="#">
-          <Image src="/logo-black.png" height={50} />
+          <Image src="/logo-black.png" alt="" height={50} />
         </Link>
       </Pane>
       <Pane alignItems="center" display="flex" width="100%">
