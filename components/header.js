@@ -21,7 +21,7 @@ export default function Header() {
         justifyContent="space-between"
       >
         <Link href="#">
-          <img src="/logo-black.png" height={50} />
+          <Image src="/logo-black.png" height={50} />
         </Link>
       </Pane>
       <Pane alignItems="center" display="flex" width="100%">

@@ -5,6 +5,7 @@ import {
 } from "@ant-design/icons";
 import { Col, Row } from "antd";
 import { Button, Heading, Link, Pane, TextInput } from "evergreen-ui";
+import Image from "next/image";
 import router from "next/router";
 
 export default function Footer() {
@@ -31,7 +32,7 @@ export default function Footer() {
             justifyContent="center"
             height="100%"
           >
-            <img src="/logo-black.png" height={90} />
+            <Image src="/logo-black.png" height={90} />
             <Heading size={400} paddingLeft={30} marginBottom={10}>
               Social Networks
             </Heading>

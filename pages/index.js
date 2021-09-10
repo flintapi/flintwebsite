@@ -71,7 +71,7 @@ function Home({ size }) {
           <Pane
             display="flex"
             flex={2}
-            backgroundImage="url('/hero-img-1.png')"
+            backgroundImage="url('/hero-Image-1.png')"
             backgroundSize="contain"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
@@ -123,7 +123,7 @@ function Home({ size }) {
           >
             <Col xs={{ span: 24 }} md={{ span: 8 }} lg={{ span: 8 }}>
               <Pane display="flex" flexDirection="column">
-                <img src="/logo-white.png" height={40} />
+                <Image src="/logo-white.png" height={40} />
                 <Button appearance="primary" height={majorScale(5)}>
                   REQUEST A DEMO
                 </Button>
