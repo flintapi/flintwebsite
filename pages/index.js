@@ -234,10 +234,18 @@ function Home({ size }) {
                 </Pane>
               </Col>
               <Col xs={{ span: 24 }} lg={{ span: 12 }}>
-                <Pane flex={1} background="tint2" height={500}>
-                  <pre className="line-numbers">
-                    {/* <code className="language-js">getAll();</code> */}
-                  </pre>
+                <Pane
+                  flex={1}
+                  background="tint2"
+                  height={650}
+                  backgroundImage="url('/code_snippet.png')"
+                  backgroundSize="cover"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                >
+                  {/* <pre className="line-numbers">
+                    <code className="language-javascript">getAll();</code>
+                  </pre> */}
                 </Pane>
               </Col>
             </Row>
