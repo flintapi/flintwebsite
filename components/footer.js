@@ -4,8 +4,7 @@ import {
   TwitterSquareFilled,
 } from "@ant-design/icons";
 import { Col, Row } from "antd";
-import { Button, Heading, Link, Pane, TextInput } from "evergreen-ui";
-import Image from "next/image";
+import { Button, Heading, Link, Pane } from "evergreen-ui";
 import router from "next/router";
 
 export default function Footer() {
@@ -18,119 +17,143 @@ export default function Footer() {
       borderRadius={3}
       paddingY={40}
     >
-      <Row style={{ width: "100%", margin: 0, padding: 0 }}>
-        <Col
-          xs={{ span: 24 }}
-          md={{ span: 12 }}
-          lg={{ span: 6 }}
-          style={{ padding: "20px auto" }}
-        >
-          <Pane
-            display="flex"
-            flexDirection="column"
-            alignItems="start"
-            justifyContent="center"
-            height="100%"
+      <Row style={{ width: "100%", padding: 0, margin: 0 }}>
+        <Col xs={{ span: 1 }} lg={{ span: 3 }}></Col>
+        <Col xs={{ span: 22 }} lg={{ span: 18 }}>
+          <Row
+            gutter={[16, 16]}
+            style={{ width: "100%", margin: 0, padding: 0 }}
           >
-            <Image src="/logo-black.png" alt="" width={160} height={40} />
-            <Heading size={400} paddingLeft={30} marginBottom={10}>
-              Social Networks
-            </Heading>
-            <Pane
-              display="flex"
-              width="100%"
-              paddingLeft={30}
-              marginBottom={10}
-              flexDirection="row"
-              justifyContent="start"
+            <Col
+              xs={{ span: 24 }}
+              md={{ span: 12 }}
+              lg={{ span: 6 }}
+              // style={{ padding: "20px auto" }}
             >
-              <Link href="https://www.linkedin.com/company/flint-api/">
-                <LinkedinFilled style={{ marginRight: 20 }} />
-              </Link>
-              <Link href="https://twitter.com/flintApi">
-                <TwitterSquareFilled style={{ marginRight: 20 }} />
-              </Link>
-              <Link href="https://medium.com/@flintApi">
-                <MediumSquareFilled style={{ marginRight: 20 }} />
-              </Link>
-            </Pane>
-            <Pane display="flex" paddingLeft={30}>
-              <TextInput width="100%" marginRight={12} height="100%" />
-              <Button
-                appearance="primary"
-                onClick={(e) => router.push("/comingsoon")}
+              <Pane
+                display="flex"
+                flexDirection="column"
+                alignItems="start"
+                justifyContent="center"
+                height="100%"
               >
-                SUBSCRIBE
-              </Button>
-            </Pane>
-          </Pane>
+                {/* <Image src="/logo-black.png" alt="" width={160} height={40} /> */}
+                <div className="logo"></div>
+                <Heading size={400} marginBottom={10}>
+                  Social Networks
+                </Heading>
+                <Pane
+                  display="flex"
+                  width="100%"
+                  // paddingLeft={30}
+                  marginBottom={10}
+                  flexDirection="row"
+                  justifyContent="start"
+                >
+                  <Link href="https://www.linkedin.com/company/flint-api/">
+                    <LinkedinFilled
+                      style={{
+                        marginRight: 20,
+                        fontSize: 20,
+                        color: "#0077b5",
+                      }}
+                    />
+                  </Link>
+                  <Link href="https://twitter.com/flintApi">
+                    <TwitterSquareFilled
+                      style={{
+                        marginRight: 20,
+                        fontSize: 20,
+                        color: "#1DA1F2",
+                      }}
+                    />
+                  </Link>
+                  <Link href="https://medium.com/@flintApi">
+                    <MediumSquareFilled
+                      style={{ marginRight: 20, fontSize: 20, color: "black" }}
+                    />
+                  </Link>
+                </Pane>
+                {/* <Pane display="flex" paddingLeft={30}> */}
+                {/* <TextInput width="100%" marginRight={12} height="100%" /> */}
+                <Button
+                  appearance="primary"
+                  onClick={(e) => router.push("/comingsoon")}
+                >
+                  SUBSCRIBE
+                </Button>
+                {/* </Pane> */}
+              </Pane>
+            </Col>
+            <Col
+              xs={{ span: 24 }}
+              md={{ span: 12 }}
+              lg={{ span: 6 }}
+              style={{ padding: "20px auto", height: "100%" }}
+            >
+              <Pane
+                display="flex"
+                flexDirection="column"
+                alignItems="start"
+                justifyContent="center"
+                width="100%"
+                height="100%"
+                paddingLeft={30}
+              >
+                <Heading size={500}>Platform</Heading>
+                <Link href="#">Overview</Link>
+                <Link href="#">How it works</Link>
+                <Link href="#">Sign up</Link>
+                <Link href="#">Sign in</Link>
+              </Pane>
+            </Col>
+            <Col
+              xs={{ span: 24 }}
+              md={{ span: 12 }}
+              lg={{ span: 6 }}
+              style={{ padding: "20px auto", height: "100%" }}
+            >
+              <Pane
+                display="flex"
+                flexDirection="column"
+                alignItems="start"
+                justifyContent="center"
+                width="100%"
+                height="100%"
+                paddingLeft={30}
+              >
+                <Heading size={500}>Developer</Heading>
+                <Link href="#">Pricing</Link>
+                <Link href="#">ApiDoc</Link>
+                <Link href="#">Changelog</Link>
+                <Link href="#">Demo</Link>
+              </Pane>
+            </Col>
+            <Col
+              xs={{ span: 24 }}
+              md={{ span: 12 }}
+              lg={{ span: 6 }}
+              style={{ padding: "20px auto", height: "100%" }}
+            >
+              <Pane
+                display="flex"
+                flexDirection="column"
+                alignItems="start"
+                justifyContent="center"
+                width="100%"
+                height="100%"
+                paddingLeft={30}
+              >
+                <Heading size={500}>Company</Heading>
+                <Link href="#">About Us</Link>
+                <Link href="#">Contact Us</Link>
+                <Link href="#">Careers</Link>
+                <Link href="#">Newsletter</Link>
+              </Pane>
+            </Col>
+          </Row>
         </Col>
-        <Col
-          xs={{ span: 24 }}
-          md={{ span: 12 }}
-          lg={{ span: 6 }}
-          style={{ padding: "20px auto", height: "100%" }}
-        >
-          <Pane
-            display="flex"
-            flexDirection="column"
-            alignItems="start"
-            justifyContent="center"
-            width="100%"
-            height="100%"
-            paddingLeft={30}
-          >
-            <Heading size={500}>Platform</Heading>
-            <Link href="#">Overview</Link>
-            <Link href="#">How it works</Link>
-            <Link href="#">Sign up</Link>
-            <Link href="#">Sign in</Link>
-          </Pane>
-        </Col>
-        <Col
-          xs={{ span: 24 }}
-          md={{ span: 12 }}
-          lg={{ span: 6 }}
-          style={{ padding: "20px auto", height: "100%" }}
-        >
-          <Pane
-            display="flex"
-            flexDirection="column"
-            alignItems="start"
-            justifyContent="center"
-            width="100%"
-            height="100%"
-            paddingLeft={30}
-          >
-            <Heading size={500}>Developer</Heading>
-            <Link href="#">Pricing</Link>
-            <Link href="#">ApiDoc</Link>
-            <Link href="#">Changelog</Link>
-            <Link href="#">Demo</Link>
-          </Pane>
-        </Col>
-        <Col
-          xs={{ span: 24 }}
-          md={{ span: 12 }}
-          lg={{ span: 6 }}
-          style={{ padding: "20px auto", height: "100%" }}
-        >
-          <Pane
-            display="flex"
-            flexDirection="column"
-            alignItems="start"
-            justifyContent="center"
-            width="100%"
-            height="100%"
-            paddingLeft={30}
-          >
-            <Heading size={500}>Company</Heading>
-            <Link href="#">About Us</Link>
-            <Link href="#">Contact Us</Link>
-            <Link href="#">Careers</Link>
-            <Link href="#">Newsletter</Link>
-          </Pane>
-        </Col>
+        <Col xs={{ span: 1 }} lg={{ span: 3 }}></Col>
       </Row>
     </Pane>
   );

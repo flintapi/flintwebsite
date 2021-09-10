@@ -57,12 +57,12 @@ function withLayout(Comp) {
     return (
       <Layout>
         <ThemeProvider value={theme}>
-          <Header style={{ background: "white", height: "auto" }}>
+          <Header style={{ background: "white", height: "auto", padding: 0 }}>
             <HeaderComp />
           </Header>
           <Content>
             <Comp size={size} />
-            <Footer style={{ background: "white" }}>
+            <Footer style={{ background: "white", padding: 0 }}>
               <FooterComp />
             </Footer>
           </Content>
