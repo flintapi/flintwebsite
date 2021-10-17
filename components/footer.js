@@ -4,8 +4,7 @@ import {
   TwitterSquareFilled,
 } from "@ant-design/icons";
 import { Col, Row } from "antd";
-import { Button, Heading, Link, Pane } from "evergreen-ui";
-import router from "next/router";
+import { Heading, Link, Pane, Text } from "evergreen-ui";
 
 export default function Footer() {
   return (
@@ -74,14 +73,10 @@ export default function Footer() {
                     />
                   </Link>
                 </Pane>
+                <Link href="mailto:admin@flintapi.io">admin@flintapi.io</Link>
                 {/* <Pane display="flex" paddingLeft={30}> */}
                 {/* <TextInput width="100%" marginRight={12} height="100%" /> */}
-                <Button
-                  appearance="primary"
-                  onClick={(e) => router.push("/comingsoon")}
-                >
-                  SUBSCRIBE
-                </Button>
+
                 {/* </Pane> */}
               </Pane>
             </Col>
@@ -101,10 +96,15 @@ export default function Footer() {
                 paddingLeft={30}
               >
                 <Heading size={500}>Platform</Heading>
+                <br />
                 <Link href="#">Overview</Link>
+                <br />
                 <Link href="#">How it works</Link>
+                <br />
                 <Link href="#">Sign up</Link>
+                <br />
                 <Link href="#">Sign in</Link>
+                <br />
               </Pane>
             </Col>
             <Col
@@ -123,10 +123,15 @@ export default function Footer() {
                 paddingLeft={30}
               >
                 <Heading size={500}>Developer</Heading>
+                <br />
                 <Link href="#">Pricing</Link>
+                <br />
                 <Link href="#">ApiDoc</Link>
+                <br />
                 <Link href="#">Changelog</Link>
+                <br />
                 <Link href="#">Demo</Link>
+                <br />
               </Pane>
             </Col>
             <Col
@@ -145,11 +150,26 @@ export default function Footer() {
                 paddingLeft={30}
               >
                 <Heading size={500}>Company</Heading>
+                <br />
                 <Link href="#">About Us</Link>
+                <br />
                 <Link href="#">Contact Us</Link>
+                <br />
                 <Link href="#">Careers</Link>
-                <Link href="#">Newsletter</Link>
+                <br />
+                <Link href="/comingsoon">Newsletter</Link>
+                <br />
               </Pane>
+            </Col>
+            <Col
+              span={24}
+              style={{
+                padding: "20px auto",
+                width: "100%",
+                textAlign: "center",
+              }}
+            >
+              <Text>© 2021 FlintApi. All rights reserved.</Text>
             </Col>
           </Row>
         </Col>

@@ -36,14 +36,27 @@ export default function Header() {
               </div>
             </Link>
           </Pane>
-          <Pane alignItems="center" display="flex" width="100%">
+          <Pane
+            alignItems="center"
+            display="flex"
+            justifyContent="end"
+            alignItems="end"
+            width="100%"
+          >
             <Menu
               onClick={(e) => {
                 console.log(e);
                 router.push("/comingsoon");
               }}
               mode="horizontal"
-              style={{ width: "100%", height: "auto" }}
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "flex",
+                justifyContent: "end",
+                alignItems: "end",
+                width: "100%",
+              }}
             >
               <Menu.Item>PRICING</Menu.Item>
               <Menu.Item>DEVELOPER</Menu.Item>
