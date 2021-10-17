@@ -30,7 +30,7 @@ export default function Header() {
             flexDirection="row"
             justifyContent="center"
           >
-            <Link href="#">
+            <Link href="/">
               <div className="logo">
                 {/* <Image src="" alt="" width={160} height={40} /> */}
               </div>
@@ -44,9 +44,9 @@ export default function Header() {
             width="100%"
           >
             <Menu
-              onClick={(e) => {
-                console.log(e);
-                router.push("/comingsoon");
+              onSelect={({ item, key, keyPath }) => {
+                console.log(item, key, keyPath);
+                router.push("/" + key);
               }}
               mode="horizontal"
               style={{
@@ -58,9 +58,9 @@ export default function Header() {
                 width: "100%",
               }}
             >
-              <Menu.Item>PRICING</Menu.Item>
-              <Menu.Item>DEVELOPER</Menu.Item>
-              <Menu.Item>CONTACT</Menu.Item>
+              <Menu.Item key="pricing">PRICING</Menu.Item>
+              <Menu.Item key="developer">DEVELOPER</Menu.Item>
+              <Menu.Item key="contact">CONTACT</Menu.Item>
               <Menu.Item>
                 <Button height={majorScale(5)}>LOGIN</Button>
               </Menu.Item>

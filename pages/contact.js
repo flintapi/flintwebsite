@@ -1,6 +1,6 @@
 // import HeroMain from "../public/hero-main.svg";
 import Icon from "@ant-design/icons";
-import { Card, Col, Collapse, Row } from "antd";
+import { Col, Collapse, Row } from "antd";
 import {
   Button,
   Heading,
@@ -11,13 +11,12 @@ import {
   PlayIcon,
   PlusIcon,
   Text,
+  Textarea,
+  TextInputField,
 } from "evergreen-ui";
 import Head from "next/head";
 import { withLayout } from "../components/layout";
-import Blockchain from "../public/section-icons/blockchain.svg";
-import Rocket from "../public/section-icons/rocket.svg";
-import Support from "../public/section-icons/support.svg";
-import Uptime from "../public/section-icons/uptime.svg";
+import EmailIcon from "../public/email-icon.svg";
 
 const { Panel } = Collapse;
 
@@ -73,20 +72,12 @@ function Home({ size }) {
                     lineHeight: "1.2em",
                   }}
                 >
-                  MULTI-CHAIN{" "}
-                  <b style={{ color: "#FFBD59" }}>
-                    NFT
-                    <br /> API
-                  </b>{" "}
-                  FOR GAME
-                  <br /> DEVELOPERS
+                  CONTACT US
                 </h1>
                 <Text size={600}>
-                  FLINT MULTI-CHAIN API enables developers to build next
-                  generation
-                  <br /> games with APIs that deliver relevant and tradeable NFT
-                  assets
-                  <br /> in milliseconds.
+                  Do you have specific requirements or need to inquire <br />{" "}
+                  about the pricing, our developer and sales team
+                  <br /> are ready to respond to your inquiries.
                 </Text>
                 <Pane display="flex" alignItems="center" marginTop={30}>
                   <Button appearance="primary" marginRight={25}>
@@ -119,203 +110,38 @@ function Home({ size }) {
               ></Pane>
             </Col>
           </Row>
-        </Col>
-        <Col xs={{ span: 1 }} lg={{ span: 3 }}></Col>
-      </Row>
-
-      <Row
-        style={{
-          width: "100%",
-          padding: 0,
-          margin: 0,
-          backgroundColor: "white",
-        }}
-      >
-        <Col xs={{ span: 1 }} lg={{ span: 3 }}></Col>
-        <Col xs={{ span: 22 }} lg={{ span: 18 }}>
-          <Pane
-            is="section"
-            paddingY={150}
-            paddingX={majorScale(5)}
-            display="flex"
-            flexDirection="column"
-            // height={550}
-            alignItems="center"
-            justifyContent="space-between"
+          <Row
+            gutter={[16, 8]}
+            style={{ width: "100%", padding: 0, margin: 0 }}
           >
-            <Row
-              style={{ width: "100%", height: "100%", margin: 0, padding: 0 }}
+            <Col span={24} style={{ textAlign: "center" }}>
+              <Link href="mailto:admin@flintapi.io">
+                <Icon component={EmailIcon} /> admin@flintapi.io
+              </Link>
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 12 }}>
+              <TextInputField placeholder="Your name" />
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 12 }}>
+              <TextInputField placeholder="Subject" />
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 24 }}>
+              <TextInputField placeholder="Your email" />
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 24 }}>
+              <Textarea placeholder="Write your message" rows={7} />
+            </Col>
+            <Col
+              xs={{ span: 24 }}
+              lg={{ span: 24 }}
+              style={{ textAlign: "center" }}
             >
-              <Col xs={{ span: 1 }} lg={{ span: 3 }}></Col>
-              <Col xs={{ span: 22 }} lg={{ span: 18 }}>
-                <Heading size={200} marginBottom={15} textAlign="center">
-                  NFT API
-                </Heading>
-                <Heading
-                  size={800}
-                  letterSpacing=".2rem"
-                  color="#FFBD59"
-                  marginBottom={35}
-                  textAlign="center"
-                >
-                  One Integration, Endless Connectivity
-                </Heading>
-                <Row
-                  gutter={16}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    margin: 0,
-                    padding: 0,
-                  }}
-                >
-                  <Col xs={{ span: 24 }} lg={{ span: 12 }}>
-                    <Card hoverable>
-                      <Heading size={600} marginBottom={22} color="#FFBD59">
-                        <Icon component={Uptime} /> 99.9% UPTIME
-                      </Heading>
-                      <Text textAlign="left">
-                        We guarantee 99,9% uptime with great TPS for any
-                        blockchain network you choose. Write it once, deploy it
-                        everywhere. No need for rework.
-                      </Text>
-                    </Card>
-                  </Col>
-                  <Col xs={{ span: 24 }} lg={{ span: 12 }}>
-                    <Card hoverable>
-                      <Heading size={600} marginBottom={22} color="#FFBD59">
-                        <Icon component={Blockchain} /> MULTI-CHAIN
-                      </Heading>
-                      <Text textAlign="left">
-                        Our API connects to all available blockchain network
-                        available in the space. We unify all blockchain network
-                        into one simple API
-                      </Text>
-                    </Card>
-                  </Col>
-                  <Col xs={{ span: 24 }} lg={{ span: 12 }}>
-                    <Card hoverable>
-                      <Heading size={600} marginBottom={22} color="#FFBD59">
-                        <Icon component={Support} /> SUPPORT
-                      </Heading>
-                      <Text textAlign="left">
-                        Good documentation and community resources to make
-                        implementation smooth and easy. With ever ready customer
-                        support.
-                      </Text>
-                    </Card>
-                  </Col>
-                  <Col xs={{ span: 24 }} lg={{ span: 12 }}>
-                    <Card hoverable>
-                      <Heading size={600} marginBottom={22} color="#FFBD59">
-                        <Icon component={Rocket} /> SCALABLE
-                      </Heading>
-                      <Text textAlign="left">
-                        No need to learn blockchain programming, we take care of
-                        all that. so you can grow as quickly as you need to keep
-                        up with your user base.
-                      </Text>
-                    </Card>
-                  </Col>
-                </Row>
-              </Col>
-              <Col xs={{ span: 1 }} lg={{ span: 3 }}></Col>
-            </Row>
-          </Pane>
-          <Pane width="100%" textAlign="center" marginY={40}>
-            <Button appearance="primary">GET STARTED</Button>
-          </Pane>
-          <Pane
-            width="100%"
-            backgroundImage="url('/networks-row.svg')"
-            backgroundSize="contain"
-            backgroundPosition="center"
-            backgroundRepeat="no-repeat"
-            minHeight={150}
-            marginBottom={150}
-          ></Pane>
+              <Button appearance="primary">SEND MESSAGE</Button>
+            </Col>
+          </Row>
         </Col>
         <Col xs={{ span: 1 }} lg={{ span: 3 }}></Col>
       </Row>
-
-      <Pane
-        is="section"
-        paddingY={150}
-        // paddingX={majorScale(8)}
-        display="flex"
-        flexDirection="column"
-        // height={550}
-        width="100%"
-        // alignItems="center"
-        justifyContent="space-between"
-        background="#D8D8D8"
-      >
-        <Pane textAlign="center" marginBottom={majorScale(6)} paddingX={40}>
-          <Heading size={900} marginBottom={25}>
-            BUILT WITH GAME DEVELOPERS IN MIND
-          </Heading>
-          <Text size={600}>
-            FLINT NFT API is built by developers for developers, and is
-            <br /> designed for seamless integration
-          </Text>
-        </Pane>
-        <Row style={{ width: "100%", padding: 0, margin: 0 }}>
-          <Col xs={{ span: 1 }} lg={{ span: 3 }}></Col>
-          <Col xs={{ span: 22 }} lg={{ span: 18 }}>
-            <Row style={{ width: "100%", padding: 0, margin: "0 0 30px 0" }}>
-              <Col xs={{ span: 24 }} lg={{ span: 12 }} style={{}}>
-                <Pane
-                  flex={1}
-                  display="flex"
-                  flexDirection="column"
-                  alignItems="start"
-                  justifyContent="space-evenly"
-                  paddingY={majorScale(8)}
-                  height="100%"
-                  maxHeight={500}
-                >
-                  <Heading size={900} color="#FFBD59" marginBottom={20}>
-                    Plug-and-play with
-                    <br /> one API
-                  </Heading>
-                  <Pane marginBottom={20}>
-                    <Button appearance="primary" marginRight={16}>
-                      READ DOCS
-                    </Button>
-                    <Button>GET STARTED</Button>
-                  </Pane>
-                  <Text marginBottom={20}>
-                    Implement any or all of FLINT API products
-                    <br /> with just a few lines of code. Access your API
-                    <br /> keys now to get started!
-                  </Text>
-                </Pane>
-              </Col>
-              <Col xs={{ span: 24 }} lg={{ span: 12 }}>
-                <Pane
-                  flex={1}
-                  background="tint2"
-                  height={450}
-                  backgroundImage="url('/code_snippet.png')"
-                  backgroundSize="cover"
-                  backgroundPosition="center"
-                  backgroundRepeat="no-repeat"
-                >
-                  {/* <pre className="line-numbers">
-                    <code className="language-javascript">getAll();</code>
-                  </pre> */}
-                </Pane>
-              </Col>
-            </Row>
-          </Col>
-          <Col xs={{ span: 1 }} lg={{ span: 3 }}></Col>
-        </Row>
-        <Row style={{ width: "100%", padding: 0, margin: 0 }}>
-          <Col xs={{ span: 1 }} lg={{ span: 3 }}></Col>
-          <Col xs={{ span: 22 }} lg={{ span: 18 }}></Col>
-          <Col xs={{ span: 1 }} lg={{ span: 3 }}></Col>
-        </Row>
-      </Pane>
 
       <Row
         style={{
@@ -415,7 +241,7 @@ function Home({ size }) {
           >
             <Heading
               size={900}
-              color="#000000"
+              color="black"
               marginBottom={20}
               textAlign="center"
             >

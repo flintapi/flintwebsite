@@ -99,7 +99,7 @@ export default function Footer() {
                 <br />
                 <Link href="#">Overview</Link>
                 <br />
-                <Link href="#">How it works</Link>
+                <Link href="/about">How it works</Link>
                 <br />
                 <Link href="#">Sign up</Link>
                 <br />
@@ -124,7 +124,7 @@ export default function Footer() {
               >
                 <Heading size={500}>Developer</Heading>
                 <br />
-                <Link href="#">Pricing</Link>
+                <Link href="/pricing">Pricing</Link>
                 <br />
                 <Link href="#">ApiDoc</Link>
                 <br />
@@ -151,11 +151,11 @@ export default function Footer() {
               >
                 <Heading size={500}>Company</Heading>
                 <br />
-                <Link href="#">About Us</Link>
+                <Link href="/about">About Us</Link>
                 <br />
-                <Link href="#">Contact Us</Link>
+                <Link href="/contact">Contact Us</Link>
                 <br />
-                <Link href="#">Careers</Link>
+                <Link href="/career">Careers</Link>
                 <br />
                 <Link href="/comingsoon">Newsletter</Link>
                 <br />
