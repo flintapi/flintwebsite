@@ -37,7 +37,6 @@ export default function Header() {
             </Link>
           </Pane>
           <Pane
-            alignItems="center"
             display="flex"
             justifyContent="end"
             alignItems="end"
