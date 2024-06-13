@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "FlintAPI",
-  description: "Simplifying next gen tech consumption with simple API conventions",
+  description: "Simplifying next gen infrastructure consumption simple API conventions",
 };
 
 export default function RootLayout({
