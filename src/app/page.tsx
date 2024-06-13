@@ -10,7 +10,7 @@ export default function Home() {
 
 
       <div className="flex place-items-center mt-5">
-        <span className="text-center font-light text-[1.2rem] md:text-lg">Focus on solutions and reducing time to market, with the confidence of building on reliable and highly available infrastructure.</span>
+        <span className="text-center font-light text-[1.2rem] md:text-lg">Focus on solutions and reducing time to market, with the confidence <br className="hidden md:block"/> of building on reliable and highly available infrastructure.</span>
       </div>
 
 
