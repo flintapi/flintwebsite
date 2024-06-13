@@ -43,9 +43,9 @@ export default function JoinWaitlist() {
           <CredenzaTitle className="text-2xl md:text-3xl text-black dark:text-white">
             Join the waitlist!
           </CredenzaTitle>
-          <CredenzaDescription className="text-[20px] md:text-lg">
-            Join the product waitlist to be among the first to get update when
-            our products go live.
+          <CredenzaDescription className="text-[20px] md:text-sm">
+            Subscribe to product waitlist and be among the first to get updated
+            when our products go live.
           </CredenzaDescription>
         </CredenzaHeader>
         <WaitlistForm />
@@ -61,7 +61,7 @@ const formSchema = z.object({
       required_error:
         "An email address is required to subscribe to the waitlist",
     })
-    .email("Not a valid email address"),
+    .email("Pleaes enter a valid email address"),
 });
 
 function WaitlistForm() {
@@ -91,18 +91,27 @@ function WaitlistForm() {
                 <FormControl>
                   <Input placeholder="email@test.com" {...field} />
                 </FormControl>
-                <FormDescription>
+                {/* <FormDescription>
                   Email address will be subscribed for waitlist
-                </FormDescription>
-                <FormMessage />
+                </FormDescription> */}
+                <FormMessage>
+                  {/* Hack to avoid layout shift when an error message pops up */}
+                  <div className="py-3" />
+                </FormMessage>
               </FormItem>
             )}
           />
         </CredenzaBody>
-        <CredenzaFooter className="mb-20 md:mb-0 p-4">
-          {/* <CredenzaClose asChild> */}
-          <Button type="submit">Submit</Button>
-          {/* </CredenzaClose> */}
+        <CredenzaFooter className="mb-10 md:mb-0 w-full grid gap-3 place-items-center sm:space-x-0 sm:justify-normal">
+          <Button type="submit" size="lg" className="w-full">
+            Submit
+          </Button>
+          <span className="text-xs">
+            By subscribing you agree to our data{" "}
+            <a className="text-sky-600" href="#" target="_blank">
+              privacy policy
+            </a>
+          </span>
         </CredenzaFooter>
       </form>
     </Form>
