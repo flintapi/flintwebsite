@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import convexityLogo from "@/assets/convexity_logo_thumb.png";
+import JoinWaitlist from "@/components/join-waitlist";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       </div>
 
       <div className="flex place-items-center mt-8">
-        <Button size="lg">Join the waitlist</Button>
+        <JoinWaitlist />
       </div>
 
       <div className="flex-1" />

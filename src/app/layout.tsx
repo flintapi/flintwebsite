@@ -18,8 +18,12 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 0.7,
-  maximumScale: 1,
+  maximumScale: 1.5,
   userScalable: false,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
 };
 
 export default function RootLayout({
@@ -28,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={cn(inter.className)}>
         <ThemeProvider
           attribute="class"
@@ -37,7 +41,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
+          <div vaul-drawer-wrapper="" className="bg-background">
           {children}
+          </div>
         </ThemeProvider>
       </body>
     <SpeedInsights />
