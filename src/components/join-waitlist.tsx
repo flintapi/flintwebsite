@@ -12,7 +12,9 @@ import {
   CredenzaTitle,
   CredenzaTrigger,
 } from "@/components/ui/credenza";
-import { useState } from "react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Loader } from "@/components/ui/loader";
+import { useState, useActionState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -26,6 +28,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { join } from "@/app/actions";
 
 // const desktop = "(min-width: 768px)"
 
@@ -48,7 +51,9 @@ export default function JoinWaitlist() {
             when our products go live.
           </CredenzaDescription>
         </CredenzaHeader>
-        <WaitlistForm />
+        <WaitlistForm
+          onFormSubmitted={(success) => setOpen(success ? false : true)}
+        />
       </CredenzaContent>
     </Credenza>
   );
@@ -62,21 +67,35 @@ const formSchema = z.object({
         "An email address is required to subscribe to the waitlist",
     })
     .email("Pleaes enter a valid email address"),
+  subscribeNewsletter: z.boolean().default(false),
 });
 
-function WaitlistForm() {
+type WaitlistFormProps = {
+  onFormSubmitted: (success: boolean) => void;
+};
+function WaitlistForm({ onFormSubmitted }: WaitlistFormProps) {
+  // initialise action state
   // 2. define form
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
+      subscribeNewsletter: true,
     },
   });
 
   // 3. define the submit handler
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     //⏳ TODO: call server action to subscribe user email address into the plunk service
     console.log(values, ":::Form value on submit");
+    const result = await join(values);
+
+    // const result = await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    // Call formSubmitted function
+    onFormSubmitted(true);
+
+    console.log(result, ":::Result of track event");
   }
 
   return (
@@ -101,10 +120,39 @@ function WaitlistForm() {
               </FormItem>
             )}
           />
+          <FormField
+            control={form.control}
+            name="subscribeNewsletter"
+            render={({ field }) => (
+              <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 shadow">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+                <div className="space-y-1 leading-none">
+                  <FormLabel>
+                    Subscribe me to receive newsletter emails
+                  </FormLabel>
+                  <FormDescription>
+                    We promise not to overload you with unnecessary emails, and
+                    you can alway change your preference
+                    {/* <Link href="/examples/forms">mobile settings</Link> page. */}
+                  </FormDescription>
+                </div>
+              </FormItem>
+            )}
+          />
         </CredenzaBody>
         <CredenzaFooter className="mb-10 md:mb-0 w-full grid gap-3 place-items-center sm:space-x-0 sm:justify-normal">
-          <Button type="submit" size="lg" className="w-full">
-            Submit
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full"
+            disabled={form.formState.isLoading}
+          >
+            {form.formState.isSubmitting ? <Loader /> : "Submit"}
           </Button>
           <span className="text-xs">
             By subscribing you agree to our data{" "}
