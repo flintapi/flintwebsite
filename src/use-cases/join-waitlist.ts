@@ -15,26 +15,26 @@ export type TrackResponse = {
 export async function joinWaitlist(
   args: WaitlistProps,
 ): Promise<TrackResponse> {
-  const TRACK_EVENT_URL = `${env.PLUNK_API_URL}/v1/contacts`;
+  const TRACK_EVENT_URL = `${env.PLUNK_API_URL}/v1/track`;
   try {
     const response = await fetch(TRACK_EVENT_URL, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-type": "application/json",
         Authorization: `Bearer ${env.PLUNK_SECRET_KEY}`,
       },
       body: JSON.stringify({
-        // event: "join-waitlist",
+        event: "join-waitlist",
         email: args.email,
         subscribed: true,
         data: {
-          newsletter: args.subscribeNewsletter,
+          newsletter: args.subscribeNewsletter? "yes" : "no",
           project: "flintapi",
         },
       }),
     });
 
-    console.log(response, TRACK_EVENT_URL, env.PLUNK_API_URL, "::;response");
+    console.log(args, response, TRACK_EVENT_URL, env.PLUNK_API_URL, "::;response");
 
     if (response.ok) {
       return (await response.json()) as TrackResponse;
