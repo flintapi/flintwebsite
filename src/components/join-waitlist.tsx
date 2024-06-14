@@ -28,6 +28,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/components/ui/use-toast";
 import { join } from "@/app/actions";
 
 // const desktop = "(min-width: 768px)"
@@ -74,6 +75,7 @@ type WaitlistFormProps = {
   onFormSubmitted: (success: boolean) => void;
 };
 function WaitlistForm({ onFormSubmitted }: WaitlistFormProps) {
+  const { toast } = useToast();
   // initialise action state
   // 2. define form
   const form = useForm<z.infer<typeof formSchema>>({
@@ -86,16 +88,28 @@ function WaitlistForm({ onFormSubmitted }: WaitlistFormProps) {
 
   // 3. define the submit handler
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    //⏳ TODO: call server action to subscribe user email address into the plunk service
-    console.log(values, ":::Form value on submit");
-    const result = await join(values);
+    try {
+      //⏳ TODO: call server action to subscribe user email address into the plunk service
+      console.log(values, ":::Form value on submit");
+      const result = await join(values);
 
-    // const result = await new Promise((resolve) => setTimeout(resolve, 3000));
+      // const result = await new Promise((resolve) => setTimeout(resolve, 3000));
 
-    // Call formSubmitted function
-    onFormSubmitted(true);
+      // Call formSubmitted function
+      onFormSubmitted(result.success);
 
-    console.log(result, ":::Result of track event");
+      toast({
+        title: "Successfuly joined the list",
+      });
+
+      console.log(result, ":::Result of track event");
+    } catch (err: any) {
+      toast({
+        title: "Failed to join the list",
+        description: err.message,
+        variant: "destructive",
+      });
+    }
   }
 
   return (
